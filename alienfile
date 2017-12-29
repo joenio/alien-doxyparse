@@ -1,0 +1,34 @@
+use alienfile;
+ 
+probe [ 'which doxyparse' ];
+
+#sub alien_bin_requires {
+#  {
+#    'Alien::flex' => 0,
+#    'Alien::bison' => 0,
+#    'Alien::cmake' => 0,
+#  }
+#}
+
+share {
+
+  requires 'Alien::OpenSSL';
+
+  start_url 'https://github.com/analizo/doxyparse/releases/download';
+
+  plugin 'Download' => (
+    filter => qr|^/.*/doxyparse_.*_amd64\.tar\.gz$|,
+    version => qr/([0-9\.-]+)/,
+  );
+
+  extract [ 'tar zxf %{.install.download}' ];
+
+  build [
+    [ 'cmake -G "Unix Makefiles" -Dbuild_parse=ON' ],
+    [ '%{make}' ],
+    [ '%{make} install' ],
+  ];
+
+};
+ 
+# vim: ft=perl

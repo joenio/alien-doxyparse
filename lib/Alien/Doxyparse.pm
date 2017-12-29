@@ -1,10 +1,9 @@
 package Alien::Doxyparse;
 use strict;
 use warnings;
+use parent 'Alien::Base';
  
 our $VERSION = '0.01';
-
-use parent 'Alien::Base';
 
 =head1 NAME
 
@@ -12,19 +11,22 @@ Alien::Doxyparse - Build and make available the doxyparse tool
 
 =head1 SYNOPSIS
 
-From a Perl script
+From your Perl script:
 
   use Alien::Doxyparse;
   use Env qw( @PATH );
-  unshift @PATH, Alien::Doxyparse->bin_dir;  # doxyparse is now in your path
 
-From Alien::Base Build.PL
+  unshift @PATH, Alien::Doxyparse->bin_dir; # doxyparse is now in your path
+  system 'doxyparse', ...;
 
-  use Alien::Base::ModuleBuild;
-  my $builder = Module::Build->new(
-    alien_bin_requires => [ 'Alien::Doxyparse' ],
-  );
-  $builder->create_build_script;
+From alienfile:
+
+  share {
+    requires 'Alien::Doxyparse';
+    build [
+      '%{doxyparse} ...',
+    ];
+  };
 
 =head1 DESCRIPTION
 
