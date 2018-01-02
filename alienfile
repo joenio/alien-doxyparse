@@ -10,7 +10,7 @@ share {
   download [ 'wget %{.meta.start_url}' ];
   extract [ 'tar zxf %{.install.download}' ];
   build [
-    [ 'cmake -G "Unix Makefiles" -Dbuild_parse=ON' ],
+    [ 'cmake -G "Unix Makefiles" -Dbuild_parse=ON -DCMAKE_INSTALL_PREFIX=%{alien.install.prefix}' ],
     [ '%{make}' ],
     [ '%{make} install' ],
   ];
