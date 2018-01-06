@@ -6,6 +6,7 @@ share {
   requires 'Alien::flex';
   requires 'Alien::bison';
   requires 'Alien::CMake';
+  requires 'Alien::m4';
   start_url 'https://codeload.github.com/analizo/doxyparse/tar.gz/1.8.14-2';
   download [ 'wget %{.meta.start_url}' ];
   extract [ 'tar zxf %{.install.download}' ];

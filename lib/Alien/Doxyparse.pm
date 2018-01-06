@@ -30,8 +30,6 @@ From alienfile:
 
 =head1 DESCRIPTION
 
-B<**this is a beta release**>
-
 This distribution installs L<Doxyparse|http://github.com/analizo/doxyparse> so that
 it can be used by other Perl distributions. If already installed for your
 operating system, and it can be found, this distribution will use the Doxyparse
