@@ -13,7 +13,7 @@ share {
   download [ 'curl %{.meta.start_url} -o doxyparse-1.8.14-6.tar.gz' ];
   extract [ 'tar zxf %{.install.download}' ];
   build [
-    [ 'cmake -G "Unix Makefiles" -Dbuild_parse=ON -DCMAKE_INSTALL_PREFIX=%{alien.install.prefix}' ],
+    [ 'cmake -G "Unix Makefiles" -Dbuild_parse=ON -DCMAKE_INSTALL_PREFIX=%{.install.prefix}' ],
     [ '%{make}' ],
     [ '%{make} install' ],
   ];
