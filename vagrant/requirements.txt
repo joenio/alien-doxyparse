@@ -1,0 +1,3 @@
+python-vagrant=0.5.15
+fabric=1.14
+fabtools
