@@ -15,7 +15,7 @@ share {
   download [ "curl %{.meta.start_url} -o doxyparse-$doxyparse_version.tar.gz" ];
   extract [ 'tar zxf %{.install.download}' ];
   build [
-    [ 'cmake -G "Unix Makefiles" -Dbuild_parse=ON -DCMAKE_INSTALL_PREFIX=%{.install.prefix}' ],
+    [ 'cmake -G "Unix Makefiles" -Dbuild_parse=ON -DCMAKE_INSTALL_PREFIX=%{.install.prefix} -DCMAKE_IGNORE_PATH=/usr/local/include/' ],
     [ '%{make}' ],
     [ '%{make} install' ],
   ];
