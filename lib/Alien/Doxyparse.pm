@@ -30,7 +30,7 @@ From alienfile:
 
 =head1 DESCRIPTION
 
-This distribution installs L<Doxyparse|http://github.com/analizo/doxyparse> so that
+This distribution installs L<Doxyparse|http://github.com/doxygen/doxygen> so that
 it can be used by other Perl distributions. If already installed for your
 operating system, and it can be found, this distribution will use the Doxyparse
 that comes with your operating system, otherwise it will download it from the
@@ -39,15 +39,15 @@ Internet, build and install it from you.
 =head1 DOXYPARSE VERSION
 
 Every release of this package installs a stable version of Doxyparse, normally
-the latest Doxyparse release. But, it's possible to specify an arbitrary
+included on the latest Doxygen release. But, it's possible to specify an arbitrary
 Doxyparse version by setting C<ALIEN_DOXYPARSE_VERSION> variable.
 
-Example installing Doxyparse C<1.8.14-6> version:
+Example installing Doxyparse C<1.8.16> version:
 
-    ALIEN_DOXYPARSE_VERSION=1.8.14-6 cpan -i Alien::Doxyparse
+    ALIEN_DOXYPARSE_VERSION=Release_1_8_16 cpan -i Alien::Doxyparse
 
 See all the
-L<Doxyparse releases on Github|https://github.com/analizo/doxyparse/releases>.
+L<Doxygen releases on Github|https://github.com/doxygen/doxygen/releases>.
 To install Doxyparse from master branch use C<master> as version:
 
     ALIEN_DOXYPARSE_VERSION=master cpan -i Alien::Doxyparse
